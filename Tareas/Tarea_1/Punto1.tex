@@ -1,0 +1,26 @@
+\textbf{1.} Sea $k:X\to Y$ una función continua. Si $f$ y $g$ son caminos en $X$ con $f(1)=g(0)$ entonces $k\circ (f*g)=(k\circ f)*(k\circ g)$, donde $*$ es el producto de caminos.
+\begin{proof}
+   Como $k\circ f$ y $k\circ g$ son funciones continuas de $I$ en $Y$, con $(k\circ f)(1)=k(f(1))=k(g(0))=(k\circ g)(0)$, el producto $(k\circ f)*(k\circ g)$ está definido. Tenemos que $k\circ (f*g)$ y $(k\circ f)*(k\circ g)$ son funciones de $I$ en $Y$. Veamos que envían a cada punto de $I$ en el mismo punto de $Y$.
+   \begin{itemize}
+      \item Sea $s\in[0,\frac{1}{2}]$ cualquiera. Tenemos
+         $$
+         \begin{aligned}
+           k\circ(f*g)(s) &= k((f*g)(s))\\
+                          &= k(f(2s))\\
+                          &= (k\circ f)(2s)\\
+                          &= ((k\circ f)*(k\circ g))(s).\\
+         \end{aligned}
+         $$
+      \item Sea $s\in [\frac{1}{2},1]$ cualquiera. Tenemos
+         $$
+         \begin{aligned}
+           k\circ(f*g)(s) &= k((f*g)(s))\\
+                          &= k(g(2s-1))\\
+                          &= (k\circ g)(2s-1)\\
+                          &= ((k\circ f)*(k\circ g))(s).\\
+         \end{aligned}
+         $$
+   \end{itemize}
+   Por tanto $k\circ(f*g)=(k\circ f)*(k\circ g)$.
+\end{proof}
+

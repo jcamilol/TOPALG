@@ -1,0 +1,60 @@
+Para la segunda parte del Punto 4 usaremos la siguiente Proposición:\\
+\textbf{Proposición.} En un espacio $X$, sean $\alpha$ un camino de $x_0$ a $x_1$ y $\beta$ un camino de $x_1$ a $x_2$. Entonces $\overline{\alpha*\beta}=\overline{\beta}*\overline{\alpha}$.
+\begin{proof}
+   Tanto $\overline{\alpha*\beta}$ como $\overline{\beta}*\overline{\alpha}$ son funciones de $I$ en $X$. Veamos que envían a cada punto de $I$ en el mismo punto de $X$.
+   \begin{itemize}
+      \item Sea $s\in[0,\frac{1}{2}]$ cualquiera. Tenemos
+         $$
+         \begin{aligned}
+            \overline{\alpha*\beta}(s) &= (\alpha*\beta)(1-s)\\
+                                       &= \beta(2(1-s)-1)\\
+                                       &= \beta(1-2s)\\
+                                       &= \overline{\beta}(2s)\\
+                                       &= (\overline{\beta}*\overline{\alpha})(s).
+         \end{aligned}
+         $$
+      \item Sea $s\in[\frac{1}{2},1]$ cualquiera. Tenemos
+         $$
+         \begin{aligned}
+            \overline{\alpha*\beta}(s) &= (\alpha*\beta)(1-s)\\
+                                       &= \alpha(2(1-s))\\
+                                       &= \alpha(2-2s)\\
+                                       &= \alpha(1-(2s-1))\\
+                                       &= \overline{\alpha}(2s-1)\\
+                                       &= (\overline{\beta}*\overline{\alpha})(s).
+         \end{aligned}
+         $$
+   \end{itemize}
+   Por tanto $\overline{\alpha*\beta}=\overline{\beta}*\overline{\alpha}$.
+\end{proof}
+\textbf{4.} Sean $x_0$ y $x_1$ puntos de un espacio conexo por caminos $X$. Pruebe que $\pi_1(X,x_0)$ es abeliano si, y solo si, para todo par de caminos $\alpha$ y $\beta$ de $x_0$ a $x_1$, se tiene que $\widehat{\alpha}=\widehat{\beta}$.
+\begin{proof}
+   $(\Rightarrow)$ Supongamos que $\pi_1(X,x_0)$ es abeliano. Sean $\alpha$ y $\beta$ caminos de $x_0$ a $x_1$ cualesquiera. Tenemos que $\widehat{\alpha}$ y $\widehat{\beta}$ son isomorfismos de $\pi_1(X,x_0)$ en $\pi_1(X,x_1)$, por lo cual ${\widehat{\beta}}^{\,-1}\circ\widehat{\alpha}$ es una función de $\pi_1(X,x_0)$ en sí mismo. Dado $[f]\in\pi_1(X,x_0)$ cualquiera se tiene
+   \begin{align*}
+   ({\widehat{\beta}}^{\,-1}\circ\widehat{\alpha})([f]) &= {\widehat{\beta}}^{\,-1}(\widehat{\alpha}([f]))\\
+                                                      &= {\widehat{\beta}}^{\,-1}([\overline{\alpha}]*[f]*[\alpha])\\
+                                                      &= \widehat{\overline{\beta}}([\overline{\alpha}]*[f]*[\alpha])\\
+                                                      &= [\beta]*\left([\overline{\alpha}]*[f]*[\alpha]\right)*[\overline{\beta}]\\
+                                                      &= (([\beta]*[\overline{\alpha}])*[f])*([\alpha]*[\overline{\beta}])\\
+                                                      &= ([f]* ([\beta]*[\overline{\alpha}]))*([\alpha]*[\overline{\beta}])\\
+                                                      & \mathclap{\text{(Usamos que } [\beta]*[\overline{\alpha}], [f] \in \pi_1(X,x_0) \text{ y que } \pi_1(X,x_0) \text{ es abeliano).}}\\
+                                                      &= [f]*[\beta]*([\overline{\alpha}]*[\alpha])*[\overline{\beta}]\\
+                                                      &= [f]*([\beta]*[\overline{\beta}])\\
+                                                      &= [f]\\
+                                                      &= i_{\pi_1(X,x_0)}([f]).
+   \end{align*}
+   Por lo tanto ${\widehat{\beta}}^{\,-1}\circ\widehat{\alpha}=i_{\pi_1(X,x_0)}$. Como ${\widehat{\beta}}^{\,-1}$ y $\widehat{\alpha}$ son isomorfismos, lo anterior basta para afirmar que $\widehat{\alpha}=\left( {\widehat{\beta}}^{\,-1}\right)^{-1}=\widehat{\beta}$.\\
+   $(\Leftarrow)$ Supongamos que para todo par de caminos $\alpha$ y $\beta$ de $x_0$ a $x_1$ se tiene que $\widehat{\alpha}$=$\widehat{\beta}$. Sean $[f],[g]\in \pi_1(X,x_0)$ cualesquiera. Como $X$ es conexo por caminos, existe un camino $\alpha$ en $X$ de $x_0$ a $x_1$. Tenemos que $g*\alpha$ y $f*\alpha$ son caminos en $X$ de $x_0$ a $x_1$, luego $\widehat{g*\alpha}=\widehat{f*\alpha}$. Por tanto
+   \begin{align*}
+   \widehat{g*\alpha}\,\left([f]\right) &= \widehat{f*\alpha}\,\left([f]\right)\\
+   [\overline{g*\alpha}]*[f]*[g*\alpha] &= [\overline{f*\alpha}]*[f]*[f*\alpha]\\
+   [\overline{\alpha}*\overline{g}]*[f]*[g*\alpha] &= [\overline{\alpha}*\overline{f}]*[f]*[f*\alpha]\\
+   & \mathclap{\text{(Usamos la Propiedad anterior)}}\\
+   [\overline{g}]*[f]*[g] &= ([\overline{f}]*[f])*[f]\\
+   & \mathclap{\text{(Operamos con } [\alpha] \text{ a izquierda y con } [\overline{\alpha}] \text{ a derecha)}}\\
+   [\overline{g}]*[f]*[g] &= [f]\\
+   [f]*[g] &= [g]*[f]\\
+   & \mathclap{\text{(Operamos con } [g] \text{ a izquierda).}}
+   \end{align*}
+   Por lo tanto $\pi_1(X,x_0)$ es abeliano.
+\end{proof}

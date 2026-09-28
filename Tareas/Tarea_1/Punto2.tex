@@ -1,0 +1,44 @@
+\textbf{2.} Un espacio $X$ se dice que es contractible si la función identidad $i_X:X\to X$ es homotópicamente nula.\\
+\textbf{a)} Demuestre que $I$ y $\mathbb{R}$ son contractibles.
+\begin{proof}
+   \phantom{o}
+   \begin{itemize}
+      \item Veamos que $I$ es contractible. Tomemos
+         \[
+         \begin{aligned}
+         H \colon I \times I &\longrightarrow I \\
+         (s,t) &\longmapsto s(1-t).
+         \end{aligned}
+         \]
+         Tenemos que $H$ es continua por formarse a partir de funciones continuas mediante operaciones que preservan la continuidad. Además, para todo $s\in I$ se tiene $H(s,0)=s=i_I(s)$ y $H(s,1)=0=e_0(s)$, con $e_0:I\to I$ la función constante en $0$. Por tanto $H$ es una homotopía entre $i_I$ y $e_0$, es decir que $i_I$ es homotópicamente nula. Concluimos que $I$ es contractible.
+      \item Veamos que $\mathbb{R}$ es contractible. Tomemos
+         \[
+         \begin{aligned}
+         H \colon \mathbb{R} \times I &\longrightarrow \mathbb{R} \\
+         (s,t) &\longmapsto s(1-t).
+         \end{aligned}
+         \]
+         Tenemos que $H$ es continua por formarse a partir de funciones continuas mediante operaciones que preservan la continuidad. Además, para todo $s\in \mathbb{R}$ se tiene $H(s,0)=s=i_\mathbb{R}(s)$ y $H(s,1)=0=e_0(s)$, con $e_0:\mathbb{R}\to \mathbb{R}$ la función constante en $0$. Por tanto $H$ es una homotopía entre $i_\mathbb{R}$ y $e_0$, es decir que $i_\mathbb{R}$ es homotópicamente nula. Concluimos que $\mathbb{R}$ es contractible.
+   \end{itemize}
+\end{proof}
+\textbf{b)} Pruebe que un espacio contractible es conexo por caminos.
+\begin{proof}
+   Sea $X$ un espacio contractible. Existen $x_0\in X$ y una función continua $H:X\times I\to X$ tal que $H(x,0)=i_X(x)=x$ y $H(x,1)=e_{x_0}(x)=x_0$ para todo $x\in X$, donde $e_{x_0}:X\to X$ es la función constante en $x_0$. Sean $a,b\in X$ cualesquiera. Para cada $x\in X$ definimos
+      \[
+      \begin{aligned}
+      H_x \colon I &\longrightarrow X \\
+      t &\longmapsto H(x,t)
+      \end{aligned}
+      \]
+      e $\iota_x:I\to X\times I:t\mapsto (x,t)=(e_x(t),i_I(t))$, donde $e_x:I\to X$ es la función constante en $x$. Como $e_x:I\to X$ e $i_I:I\to I$ son funciones continuas, se tiene que $\iota_x$ es continua. Además $H_x=H\circ\iota_x$\\
+      \input{Diag1.tex}
+      pues para cada $t\in I$ se tiene
+      $$
+      \begin{aligned}
+         (H\circ\iota_x)(t) &= H(\iota_x(t))\\
+                            &= H(x,t)\\
+                            &= H_x(t).
+      \end{aligned}
+      $$
+      Por lo tanto $H_x$ es continua por ser composición de funciones continuas. De esta forma $H_x$ es un camino en $X$ para todo $x\in X$, con punto inicial $H_x(0)=H(x,0)=x$ y punto final $H_x(1)=H(x,1)=x_0$. De esta forma $H_a$ es un camino de $a$ a $x_0$ y $H_b$ es un camino de $b$ a $x_0$, luego $\overline{H_b}$ es un camino de $x_0$ a $b$, de modo que $H_a*\overline{H_b}$ es un camino en $X$ de $a$ a $b$. Por lo tanto $X$ es conexo por caminos.
+\end{proof}

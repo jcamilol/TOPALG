@@ -1,0 +1,29 @@
+\textbf{3.} Un subconjunto $A$ de $\mathbb{R}^n$ se dice estrellado si, para algún punto $a_0\in A$, todos los segmentos de recta uniendo $a_0$ con los puntos de $A$ están contenidos en $A$. Demuestre que si $A$ es estrellado entonces $A$ es simplemente conexo.
+\begin{proof}
+   Sea $A$ un espacio estrellado con punto base $a_0$.\\\\
+   Veamos que $A$ es conexo por caminos. Para cada $x\in A$ tomamos $P_x$ como la parametrización del segmento de recta que va de $x$ a $a_0$:
+   \[
+   \begin{aligned}
+   P_x \colon I &\longrightarrow A \\
+              t &\longmapsto (1-t)x+ta_0.
+   \end{aligned}
+   \]
+   Como $A$ es estrellado, $P_x$ está bien definida. Tenemos que $P_x$ es continua por ser obtenida a partir de funciones continuas mediante operaciones que preservan la continuidad. Además $P_x(0)=x$ y $P_x(1)=a_0$, de modo que $P_x$ es un camino en $A$ de $x$ a $a_0$ para todo $x\in X$. Dados $x,y\in A$ cualesquiera se tiene que $\overline{P_y}$ es un camino que va de $a_0$ a $y$, de modo que $P_x*\overline{P_y}$ es un camino en $A$ de $x$ a $y$. Por tanto $A$ es conexo por caminos.\\\\
+   Veamos que $\pi_1(A,a_0)$ es trivial. Sea $[f]\in\pi_1(A,a_0)$ cualquiera. Basta ver que $f\simeq_p e_{a_0}$, donde $e_{a_0}:I\to A$ es el camino constante en $a_0$. Definimos
+   \[
+   \begin{aligned}
+   H \colon I \times I &\longrightarrow A \\
+                 (s,t) &\longmapsto P_{f(s)}(t)=(1-t)f(s)+ta_0.
+   \end{aligned}
+   \]
+   Notemos que para cada $(s,t)\in I\times I$ se tiene que $P_{f(s)}(t)$ es un punto sobre el segmento de recta que conecta $f(s)$ con $a_0$. Como $f$ es un lazo en $A$, $f(s)\in A$ para todo $s\in I$; como además $A$ es estrellado, se tiene $P_{f(s)}(t)\in A$ y por tanto $H$ está bien definida. Se tiene que $H$ es continua por ser obtenida a partir de funciones continuas mediante operaciones que preservan la continuidad. Además, para cada $s\in I$
+   $$
+   H(s,0)=P_{f(s)}(0)=f(s),\quad H(s,1)=P_{f(s)}(1)=a_0=e_{a_0}(s),
+   $$
+   y para cada $t\in I$
+   $$
+   H(0,t)=P_{f(0)}(t)=P_{a_0}(t)=a_0, \quad H(1,t)=P_{f(1)}(t)=P_{a_0}(t)=a_0.   
+   $$
+   Por tanto $H$ es una homotopía de caminos entre $f$ y $e_{a_0}$, es decir $f\simeq_p e_{a_0}$.
+   Concluimos que $A$ es simplemente conexo.
+\end{proof}
