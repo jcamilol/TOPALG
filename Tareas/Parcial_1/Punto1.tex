@@ -1,0 +1,23 @@
+\textbf{1.} Demuestre que si $h,h':X\to Y$ son homotópicas y $k,k':Y\to Z$ son homotópicas entonces $k\circ h$ y $k'\circ h'$ son homotópicas.
+\begin{proof}
+Supongamos que $h$ y $h'$ son homotópicas, y que $k$ y $k'$ son homotópicas. Existen\\$F_h:X\times I\to Y$ y $F_k:Y\times I\to Z$ homotopías entre $h$ y $h'$, y entre $k$ y $k'$, respectivamente. Definimos $F_h^*:X\times I\to Y\times I$ mediante $F_h^*(x,t)=\bigl(F_h(x,t),\, \rho_2(x,t)\bigr)$ para todo $(x,t)\in X\times I,$ donde $\rho_2:X\times I\to I$ es la proyección en la segunda componente. Como $F_h$ y $\rho_2$ son continuas, entonces $F_h^*$ es continua. Tomemos $F=F_k\circ F_h^*:X\times I\to Z$. Como $F_h^*$ y $F_k$ son continuas, entonces $F$ es continua. Para cualquier $x\in X$ se tiene
+   \begin{align*}
+      F(x,0)&=(F_k\circ F_h^*)(x,0)\\
+      &=F_k\bigl(F_h^*(x,0)\bigr)\\
+      &=F_k\bigl(F_h(x,0),\,\rho_2(x,0)\bigr)\\
+      &=F_k\bigl(h(x),0\bigr)\\
+      &=k\bigl(h(x)\bigr)\\
+      &=(k\circ h)(x)
+   \end{align*}
+y
+   \begin{align*}
+      F(x,1)&=(F_k\circ F_h^*)(x,1)\\
+      &=F_k\bigl(F_h^*(x,1)\bigr)\\
+      &=F_k\bigl(F_h(x,1),\,\rho_2(x,1)\bigr)\\
+      &=F_k\bigl(h'(x),1\bigr)\\
+      &=k'\bigl(h'(x)\bigr)\\
+      &=(k'\circ h')(x).
+   \end{align*}
+Por lo tanto $F$ es una homotopía entre $k\circ h$ y $k'\circ h'$. Concluimos que $k\circ h$ y $k'\circ h'$ son homotópicas.
+\end{proof}
+\clearpage

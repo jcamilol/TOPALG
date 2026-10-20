@@ -1,0 +1,42 @@
+\begin{Lema}\label{Lema:Lema1}
+Sea $X$ un espacio topológico conexo. Para cada $x\in X$ tomamos una vecindad $U_x$ de $x$. Entonces para cualesquiera $x,y\in X$ existe una colección $\{x_j\}_{j=0}^{n}$ de elementos de $X$ para algún $n\in\mathbb{Z}^+$, con $x_0=x$, $x_n=y$, tal que $U_{x_j}\cap U_{x_{j+1}}\neq\emptyset$ para todo $j\in\{0,\dots,n-1\}$.
+\end{Lema}
+\begin{proof}
+    
+Sea $x\in X$ cualquiera. Definimos $\mathcal{U}=\{U_c\mid c\in X\}$, y
+\[
+\mathcal{U}_0=\{U_x\},\qquad
+\mathcal{U}_{i+1}=\{U_c\in\mathcal{U}\mid \text{existe } U_b\in\mathcal{U}_i \text{ tal que } U_c\cap U_b\neq\emptyset\}
+\]
+para cualquier $i\in\mathbb{N}$.\\\\ 
+\textbf{Hecho:} Sea $i\in\mathbb{N}$ cualquiera. Entonces el lema se cumple para cualquier $y\in X$ tal que $U_y\in\mathcal{U}_i$.\\ 
+\textit{Prueba del hecho.} Supongamos $i=0$. Sea $y\in X$ cualquiera tal que $U_y\in\mathcal{U}_i$. Entonces $U_y=U_x$, y el lema se cumple tomando $n=1$, y $x_n=y$. Supongamos que para cierto $i\in\mathbb{N}$ se tiene que el lema se cumple para cualquier $y\in X$ tal que $U_y\in\mathcal{U}_i$. Ahora, tomemos cualquier $y\in X$ con $U_y\in\mathcal{U}_{i+1}$. Entonces existe $U_b\in\mathcal{U}_i$ tal que $U_y\cap U_b\neq\emptyset$. Por la hipótesis de inducción el lema se cumple para $b$, de modo que existe una colección $\{x_j\}_{j=0}^{n}$ de elementos de $X$, con $n\ge 1$, $x_0=x$, $x_n=b$, tal que $U_{x_j}\cap U_{x_{j+1}}\neq\emptyset$ para todo $j\in\{0,\dots,n-1\}$. Entonces, tomando la colección $\{x_j\}_{j=0}^{n+1}$ con $x_{n+1}=y$, el lema se cumple para $y$. Esto prueba el hecho.\\\\
+Tomemos $\mathcal{V}=\bigcup_{i\in\mathbb{N}}\mathcal{U}_i$. Veamos que $\mathcal{V}=\mathcal{U}$. Como $\mathcal{U}_i\subseteq\mathcal{U}$ para todo $i\in\mathbb{N}$, se tiene $\mathcal{V}\subseteq\mathcal{U}$. Supongamos $\mathcal{U}\not\subseteq\mathcal{V}$. Tomemos $\mathcal{V}'=\mathcal{U}\setminus\mathcal{V}=\{U_c\in\mathcal{U}\mid U_c\notin\mathcal{V}\}$. Llamemos
+\[
+M=\bigcup_{U_c\in\mathcal{V}}U_c
+\qquad\text{y}\qquad
+N=\bigcup_{U_c\in\mathcal{V}'}U_c .
+\]
+Como $M$ y $N$ son unión de abiertos de $X$, entonces $M$ y $N$ son abiertos de $X$. Además $x\in U_x\in\mathcal{V}$, así que $M\neq\emptyset$. Como $\mathcal{V}'\neq\emptyset$, existe $y\in X$ con $y\in U_y\in\mathcal{V}'$, así que $N\neq\emptyset$. También, para cualquier $y\in X$ se tiene $y\in U_y$, además de que $U_y\in\mathcal{V}$ o $U_y\in\mathcal{V}'$; en todo caso $y\in M\cup N$. Por tanto $M\cup N=X$. Supongamos que existe $y\in M\cap N$. Entonces $y\in U_c$ para algún $U_c\in\mathcal{V}$ y $y\in U_d$ para algún $U_d\in\mathcal{V}'$. Como $U_c\in\mathcal{V}$ entonces $U_c\in\mathcal{U}_i$ para algún $i\in\mathbb{N}$. Como $U_y\cap U_c\neq\emptyset$, pues $y\in U_y\cap U_c$, entonces $U_y\in\mathcal{U}_{i+1}$. Como $U_y\cap U_d\neq\emptyset$, pues $y\in U_y\cap U_d$, entonces $U_d\in\mathcal{U}_{i+2}$, con lo cual $U_d\in\mathcal{V}$, contradiciendo $U_d\in\mathcal{V}'=\mathcal{U}\setminus\mathcal{V}$. Por tanto $M\cap N=\emptyset$. Pero entonces $(M,N)$ es una separación de $X$, contradiciendo que $X$ es conexo. Por tanto $\mathcal{U}\subseteq\mathcal{V}$ y $\mathcal{V}=\mathcal{U}$.\\\\
+Sea $y\in X$ cualquiera. Tenemos $U_y\in\mathcal{V}$, con lo cual $U_y\in\mathcal{U}_i$ para algún $i\in\mathbb{N}$. Por el hecho, el lema se cumple para $y$, lo cual completa la prueba.
+\end{proof}\clearpage
+\textbf{4.} Sea $p:E\to B$ una función recubridora, con $B$ conexo. Demuestre que si $p^{-1}(b_0)$ tiene $k$ elementos para algún $b_0\in B$, entonces $p^{-1}(b)$ tiene $k$ elementos para todo $b\in B$.
+\begin{proof}   
+Para cualquier $x\in B$ existe una vecindad $U_x$ de $x$ que es regularmente cubierta por $p$, de modo que existe una colección $\{V_\alpha\}_{\alpha\in I_x}$ de abiertos disyuntos de $E$ tales que
+\[
+\bigsqcup_{\alpha\in I_x}V_\alpha=p^{-1}(U_x)
+\quad\text{y}\quad
+p|_{V_\alpha}:V_\alpha\to U_x \text{ es un homeomorfismo}
+\]
+para cada $\alpha\in I_x$.
+ 
+\medskip
+\noindent\textbf{Hecho:} Para cualquier $y\in U_x$ se tiene $|p^{-1}(y)|=|I_x|$.
+ 
+\emph{Prueba del hecho.} Sea $y\in U_x$ cualquiera. Para cada $\alpha\in I_x$ existe $y_\alpha\in V_\alpha$ tal que $p|_{V_\alpha}(y_\alpha)=y$. Veamos que $\{y_\alpha\}_{\alpha\in I_x}=p^{-1}(y)$. Para cada $\alpha\in I_x$ se tiene $p(y_\alpha)=p|_{V_\alpha}(y_\alpha)=y$, luego $y_\alpha\in p^{-1}(y)$ y $\{y_\alpha\}_{\alpha\in I_x}\subseteq p^{-1}(y)$. Para cualquier $z\in p^{-1}(y)$, tenemos $p(z)=y\in U_x$, luego $z\in p^{-1}(U_x)$ y por tanto $z\in V_\alpha$ para algún $\alpha\in I_x$. Así, $p|_{V_\alpha}(z)=p(z)=y=p|_{V_\alpha}(y_\alpha).$ Como $p|_{V_\alpha}$ es inyectiva, se tiene $z=y_\alpha$, y por tanto $z\in\{y_\alpha\}_{\alpha\in I_x}$. Así, $p^{-1}(y)\subseteq\{y_\alpha\}_{\alpha\in I_x}$, y por tanto $\{y_\alpha\}_{\alpha\in I_x}=p^{-1}(y)$. Dados $\alpha,\alpha'\in I_x$ cualesquiera con $\alpha\neq\alpha'$, como $y_\alpha\in V_\alpha$, $y_{\alpha'}\in V_{\alpha'}$ y $V_\alpha\cap V_{\alpha'}=\emptyset$, entonces $y_\alpha\neq y_{\alpha'}$. De esta manera, $|p^{-1}(y)|=|\{y_\alpha\}_{\alpha\in I_x}|=|I_x|$, lo cual prueba el hecho. Como consecuencia se tiene que $|p^{-1}(y_1)|=|p^{-1}(y_2)|$ para cualesquiera $y_1,y_2\in U_x$.\\\\
+Sea $b_0\in B$ tal que $p^{-1}(b_0)$ tiene $k$ elementos. Sea $b\in B$ cualquiera. Por el \Cref{Lema:Lema1}, existe una colección $\{x_j\}_{j=0}^{n}$ de elementos de $B$ para algún $n\in\mathbb{Z}^+$, con $x_0=b_0$ y $x_n=b$, tal que $U_{x_j}\cap U_{x_{j+1}}\neq\emptyset$ para todo $j\in\{0,\dots,n-1\}$. Para cada $j\in\{0,\dots,n-1\}$ tomemos $y_j\in U_{x_j}\cap U_{x_{j+1}}$. Como $x_j\in U_{x_j}$ y $x_{j+1}\in U_{x_{j+1}}$, por el hecho se tiene $|p^{-1}(x_j)|=|p^{-1}(y_j)|=|p^{-1}(x_{j+1})|.$ Así,
+\[
+|p^{-1}(b_0)|=|p^{-1}(x_0)|=|p^{-1}(x_1)|=\cdots=|p^{-1}(x_{n-1})|=|p^{-1}(x_n)|=|p^{-1}(b)|,
+\]
+y por tanto $p^{-1}(b)$ tiene $k$ elementos.
+\end{proof}\clearpage

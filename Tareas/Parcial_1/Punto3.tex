@@ -1,0 +1,40 @@
+\newcommand{\pig}{\pi_1}
+\textbf{3.} Sea $\alpha$ un camino en $X$ de $x_0$ a $x_1$ y sea $\beta$ un camino en $X$ de $x_1$ a $x_2$. Demuestre que si $\gamma=\alpha*\beta$ entonces $\widehat\gamma=\widehat\beta\circ\widehat\alpha$.
+\begin{proof}
+\textbf{Hecho:} $\overline{\alpha*\beta}=\overline{\beta}*\overline{\alpha}$.\\
+Tanto $\overline{\alpha*\beta}$ como $\overline{\beta}*\overline{\alpha}$ son funciones de $I$ en $X$. Para cualesquiera $t\in[0,\tfrac12]$ y $s\in[\tfrac12,1]$ se tiene
+   \begin{align*}
+      \overline{\alpha*\beta}(t)&=(\alpha*\beta)(1-t)\\
+      &=\beta(2(1-t)-1)\\
+      &=\beta(1-2t)\\
+      &=\overline{\beta}(2t)\\
+      &=(\overline{\beta}*\overline{\alpha})(t),
+      \end{align*}
+      \begin{align*}
+      \overline{\alpha*\beta}(s)&=(\alpha*\beta)(1-s)\\
+      &=\alpha(2(1-s))\\
+      &=\alpha(1-(2s-1))\\
+      &=\overline{\alpha}(2s-1)\\
+      &=(\overline{\beta}*\overline{\alpha})(s).
+   \end{align*}
+Por tanto $\overline{\alpha*\beta}=\overline{\beta}*\overline{\alpha}$.\\
+Ahora, notemos que $\operatorname{dom}(\widehat\alpha)=\pig(X,x_0)$, $\operatorname{cod}(\widehat\alpha)=\pig(X,x_1)=\operatorname{dom}(\widehat\beta)$ y $\operatorname{cod}(\widehat\beta)=\pig(X,x_2)$. Luego $\widehat\beta\circ\widehat\alpha$ está definida, y $\operatorname{dom}(\widehat\beta\circ\widehat\alpha)=\pig(X,x_0)$ y $\operatorname{cod}(\widehat\beta\circ\widehat\alpha)=\pig(X,x_2)$. Como $\gamma=\alpha*\beta$ es un camino de $x_0$ a $x_2$, tenemos
+   \[
+      \operatorname{dom}(\widehat\gamma)=\pig(X,x_0)=\operatorname{dom}(\widehat\beta\circ\widehat\alpha)
+      \quad\text{y}\quad
+      \operatorname{cod}(\widehat\gamma)=\pig(X,x_2)=\operatorname{cod}(\widehat\beta\circ\widehat\alpha).
+   \]
+Además, para cualquier $[f]\in\pig(X,x_0)$ se tiene
+   \begin{align*}
+      \widehat\gamma([f])&=[\overline{\gamma}]*[f]*[\gamma]\\
+      &=[\overline{\alpha*\beta}]*[f]*[\alpha*\beta]\\
+      &=[\overline{\beta}*\overline{\alpha}]*[f]*[\alpha*\beta]
+      \qquad\text{(usamos el hecho)}\\
+      &=[\overline{\beta}]*\bigl([\overline{\alpha}]*[f]*[\alpha]\bigr)*[\beta]\\
+      &=[\overline{\beta}]*\widehat\alpha([f])*[\beta]\\
+      &=\widehat\beta\bigl(\widehat\alpha([f])\bigr)\\
+      &=(\widehat\beta\circ\widehat\alpha)([f]).
+   \end{align*}
+Por tanto $\widehat\gamma=\widehat\beta\circ\widehat\alpha$.
+\end{proof}
+\clearpage

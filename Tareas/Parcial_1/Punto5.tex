@@ -1,0 +1,11 @@
+\textbf{5.} Sea $p:E\to B$ una función recubridora.\\\\
+\textbf{a)} Si $B$ es Hausdorff entonces también lo es $E$.
+\begin{proof}
+Para cada $x\in B$ existe una vecindad $U_x$ de $x$ que está regularmente cubierta por $p$, de modo que existe una colección $\{V_\alpha\}_{\alpha\in I_x}$ de abiertos disjuntos de $E$ tales que $p^{-1}(U_x)=\bigsqcup_{\alpha\in I_x}V_\alpha$ y $p|_{V_\alpha}:V_\alpha\to U_x$ es un homeomorfismo para todo $\alpha\in I_x$.\\\\ 
+Supongamos que $B$ es Hausdorff. Sean $e_1,e_2\in E$ cualesquiera con $e_1\neq e_2$.
+\begin{itemize}
+   \item \underline{Caso 1}: Supongamos $p(e_1)=p(e_2)=:b\in U_b$. Entonces $e_1,e_2\in p^{-1}(U_b)=\bigsqcup_{\alpha\in I_b}V_\alpha$, luego existen $\alpha_1,\alpha_2\in I_b$ tales que $e_1\in V_{\alpha_1}$ y $e_2\in V_{\alpha_2}$. Si $e_2\in V_{\alpha_1}$ entonces $p|_{V_{\alpha_1}}(e_2)=p(e_2)=b=p(e_1)=p|_{V_{\alpha_1}}(e_1)$. Como $p|_{V_{\alpha_1}}$ es inyectiva, $e_1=e_2$. Por tanto $e_2\notin V_{\alpha_1}$. Así, $V_{\alpha_2}\neq V_{\alpha_1}$, luego $V_{\alpha_2}\cap V_{\alpha_1}=\emptyset$. Por tanto $e_1$ y $e_2$ tienen vecindades disjuntas en $E$.
+   \item \underline{Caso 2}: Supongamos $p(e_1)\neq p(e_2)$. Como $B$ es Hausdorff, existen $W_1$ y $W_2$ vecindades disjuntas de $p(e_1)$ y $p(e_2)$, respectivamente. Tenemos $e_1\in p^{-1}(W_1)$ y $e_2\in p^{-1}(W_2)$, con $p^{-1}(W_1)$ y $p^{-1}(W_2)$ abiertos de $E$, pues $p$ es continua. Además $p^{-1}(W_1)\cap p^{-1}(W_2)=p^{-1}(W_1\cap W_2)=p^{-1}(\emptyset)=\emptyset$. Por tanto, $e_1$ y $e_2$ tienen vecindades disjuntas en $E$.
+\end{itemize}
+De los dos casos anteriores se sigue que $E$ es Hausdorff.
+\end{proof}
