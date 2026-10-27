@@ -1,0 +1,55 @@
+\textbf{9.} Demuestre que si $A$ es un retracto de deformación de $X$ y $B$ es un retracto de deformación de $A$ entonces $B$ es un retracto de deformación de $X$.
+\begin{proof}
+Supongamos que $A$ es un retracto de deformación de $X$ y que $B$ es un retracto de deformación de $A$. Existen $H_X:X\times I\to X$ y $H_A:A\times I\to A$ funciones continuas tales que
+\begin{itemize}
+\item $H_X(x,0)=x$ y $H_X(x,1)\in A$ para todo $x\in X$,
+\item $H_X(a,t)=a$ para cualesquiera $a\in A$ y $t\in I$,
+\item $H_A(a,0)=a$ y $H_A(a,1)\in B$ para todo $a\in A$,
+\item $H_A(b,t)=b$ para cualesquiera $b\in B$ y $t\in I$.
+\end{itemize}
+Tenemos que $g:[0,\tfrac12]\to I:t\mapsto 2t$ es continua, así que $\mathrm{id}_X\times g:X\times[0,\tfrac12]\to X\times I$ es continua, luego $H_1:=H_X\circ(\mathrm{id}_X\times g):X\times[0,\tfrac12]\to X$ es continua. Ahora, las funciones $\mathrm{id}_X:X\to X$ y $e_1:X\to I:x\mapsto 1$ son continuas, así que $j:X\to X\times I:x\mapsto(\mathrm{id}_X(x),e_1(x))=(x,1)$ es continua. Con esto, $\widetilde{q}:=H_X\circ j:X\to X$ es continua. Como $\widetilde{q}(x)=H_X\circ j(x)=H_X(x,1)\in A$ para todo $x\in X$, entonces $\widetilde{q}(X)\subseteq A$ y la función $q:X\to A:x\mapsto\widetilde{q}(x)$ es continua. Como la función $h:[\tfrac12,1]\to I:t\mapsto 2t-1$ es continua, entonces $q\times h:X\times[\tfrac12,1]\to A\times I$ es continua. Como además la inclusión $\iota:A\to X$ es continua, entonces $H_2:=\iota\circ H_A\circ(q\times h):X\times[\tfrac12,1]\to X$ es continua. Tenemos que $X\times[0,\tfrac12]$ y $X\times[\tfrac12,1]$ son subconjuntos cerrados de $X\times I$, $(X\times[0,\tfrac12])\cup(X\times[\tfrac12,1])=X\times I$, $(X\times[0,\tfrac12])\cap(X\times[\tfrac12,1])=X\times\{\tfrac12\}$, y para todo $x\in X$
+\begin{align*}
+H_1(x,\tfrac12)&=H_X\circ(\mathrm{id}_X\times g)(x,\tfrac12)\\
+&=H_X(x,g(\tfrac12))\\
+&=H_X(x,1)\in A,
+\end{align*}
+luego
+\begin{align*}
+H_2(x,\tfrac12)&=\iota\circ H_A\circ(q\times h)(x,\tfrac12)\\
+&=H_A(q(x),h(\tfrac12))\\
+&=H_A(\widetilde{q}(x),0)\\
+&=H_A(H_X\circ j(x),0)\\
+&=H_A(H_X(j(x)),0)\\
+&=H_A(H_X(x,1),0)\\
+&=H_X(x,1)\\
+&=H_1(x,\tfrac12).
+\end{align*}
+Así, por el lema de pegado, la función
+\[
+H:X\times I\to X,\qquad (x,t)\mapsto H(x,t)=
+\begin{cases}
+H_1(x,t) & \text{si } t\in[0,\tfrac12]\\
+H_2(x,t) & \text{si } t\in[\tfrac12,1]
+\end{cases}
+\]
+es continua. Para cualquier $t\in[0,\tfrac12]$ se tiene
+\begin{align*}
+H_1(x,t)&=(H_X\circ(\mathrm{id}_X\times g))(x,t)\\
+&=H_X(x,g(t))\\
+&=H_X(x,2t),
+\end{align*}
+y para cualquier $t\in[\tfrac12,1]$ tenemos
+\begin{align*}
+H_2(x,t)&=(\iota\circ H_A\circ(q\times h))(x,t)\\
+&=H_A(q(x),h(t))\\
+&=H_A(\widetilde{q}(x),h(t))\\
+&=H_A((H_X\circ j)(x),2t-1)\\
+&=H_A(H_X(j(x)),2t-1)\\
+&=H_A(H_X(x,1),2t-1).
+\end{align*}
+\begin{itemize}
+\item Para cualquier $x\in X$ se tiene $H(x,0)=H_1(x,0)=H_X(x,0)=x$, y como $H_X(x,1)\in A$, entonces $H(x,1)=H_2(x,1)=H_A(H_X(x,1),1)\in B$.
+\item Sean $b\in B$ y $t\in I$ cualesquiera. Si $t\in[0,\tfrac12]$, como $b\in A$, $H(b,t)=H_1(b,t)=H_X(b,2t)=b$. Si $t\in[\tfrac12,1]$, como $b\in A$, $H_X(b,1)=b$ y $H(b,t)=H_2(b,t)=H_A(H_X(b,1),2t-1)=H_A(b,2t-1)=b$. Por tanto $H(b,t)=b$ para cualesquiera $b\in B$ y $t\in I$.
+\end{itemize}
+De esta manera, $H$ es una retracción de deformación de $X$ en $B$. Concluimos que $B$ es un retracto de deformación de $X$.
+\end{proof}\clearpage

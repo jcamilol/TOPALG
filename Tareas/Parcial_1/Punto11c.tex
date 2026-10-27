@@ -1,0 +1,30 @@
+\textbf{c)} $\mathbb{R}^3$ sin el eje $z$.
+\begin{proof}[\textbf{Solución}]
+Tomemos $X=\mathbb{R}^3\setminus\{(0,0,z)\mid z\in\mathbb{R}\}$. Si $((x,y,z),t)\in X\times I$ es tal que $(x,y,(1-t)z)\notin X$ entonces $(x,y,(1-t)z)\in\{(0,0,w)\mid w\in\mathbb{R}\}$, luego $x=0$, $y=0$, pero esto contradice que $(x,y,z)\in X$. Por tanto $(x,y,(1-t)z)\in X$ para todo $((x,y,z),t)\in X\times I$. Definimos entonces la función
+\begin{align*}
+H:X\times I&\longrightarrow X\\
+((x,y,z),t)&\longmapsto(x,y,(1-t)z),
+\end{align*}
+que es continua porque se forma a partir de funciones continuas mediante operaciones que preservan la continuidad. Además,
+\begin{itemize}
+\item Para todo $(x,y,z)\in X$, se tiene $H((x,y,z),0)=(x,y,z)$ y $H((x,y,z),1)=(x,y,0)\in(\mathbb{R}^2\times\{0\})\setminus\{0\}$.
+\item Para cualesquiera $(x,y,0)\in(\mathbb{R}^2\times\{0\})\setminus\{0\}$ y $t\in I$ se tiene $H((x,y,0),t)=(x,y,0)$.
+\end{itemize}
+Por tanto $(\mathbb{R}^2\times\{0\})\setminus\{0\}$ es un retracto de deformación de $X$, luego, para cualquier $w_0\in(\mathbb{R}^2\times\{0\})\setminus\{0\}$ se tiene
+\[
+\pi_1(X,w_0)\cong\pi_1((\mathbb{R}^2\times\{0\})\setminus\{0\},w_0).
+\]
+Como $(\mathbb{R}^2\times\{0\})\setminus\{0\}\cong\mathbb{R}^2\setminus\{0\}$ entonces
+\[
+\pi_1((\mathbb{R}^2\times\{0\})\setminus\{0\},w_0)\cong\pi_1(\mathbb{R}^2\setminus\{0\},w_1),
+\]
+donde $w_1$ es la imagen de $w_0$ bajo el homeomorfismo. Por el \Cref{Lema:Esfera_retracto_de_Rn_menos_origen}, $S^1$ es un retracto de deformación de $\mathbb{R}^2\setminus\{0\}$, luego, dado $w_2\in S^1$, se tiene
+\[
+\pi_1(\mathbb{R}^2\setminus\{0\},w_2)\cong\pi_1(S^1,w_2)\cong(\mathbb{Z},+).
+\]
+Como $\mathbb{R}^2\setminus\{0\}$ es conexo por caminos, se tiene
+\[
+\pi_1(\mathbb{R}^2\setminus\{0\},w_1)\cong\pi_1(\mathbb{R}^2\setminus\{0\},w_2).
+\]
+Por la transitividad de $\cong$ se tiene $\pi_1(X,w_0)\cong(\mathbb{Z},+)$. Como $X$ es conexo por caminos, para cualquier $w\in X$ se tiene $\pi_1(X,w)\cong\pi_1(X,w_0)$ y por tanto $\pi_1(X,w)\cong(\mathbb{Z},+)$.
+\end{proof}

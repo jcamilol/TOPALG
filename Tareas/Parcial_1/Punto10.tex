@@ -1,0 +1,56 @@
+\textbf{10.} Muestre que $\pi_1(X\times Y,(x_0,y_0))$ es isomorfo a $\pi_1(X,x_0)\times\pi_1(Y,y_0)$.
+\begin{proof}
+Sean $p:X\times Y\to X$ y $q:X\times Y\to Y$ las proyecciones de $X\times Y$ en la primera y segunda coordenadas, respectivamente. Como $p$ y $q$ son continuas, estas inducen homomorfismos de grupos $p_*:\pi_1(X\times Y,(x_0,y_0))\to\pi_1(X,x_0)$ y $q_*:\pi_1(X\times Y,(x_0,y_0))\to\pi_1(Y,y_0)$. Definimos
+\begin{align*}
+\varphi:\pi_1(X\times Y,(x_0,y_0))&\to\pi_1(X,x_0)\times\pi_1(Y,y_0)\\
+w&\mapsto(p_*(w),q_*(w)).
+\end{align*}
+Como $p_*$ y $q_*$ son homomorfismos entonces $\varphi$ es un homomorfismo.\\\\
+Veamos que $\varphi$ es sobreyectiva. Sea $([f],[g])\in\pi_1(X,x_0)\times\pi_1(Y,y_0)$ cualquiera. Tenemos que $f:I\to X$ y $g:I\to Y$ son continuas, con $f(0)=f(1)=x_0$ y $g(0)=g(1)=y_0$. Por la propiedad universal del producto, existe una única función continua $h:I\to X\times Y$ tal que el diagrama
+\[
+\begin{tikzcd}[column sep=large,row sep=large]
+ & I \arrow[dl,"f"'] \arrow[dr,"g"] \arrow[d,dashed,"h"] & \\
+X & X\times Y \arrow[l,"p"] \arrow[r,"q"'] & Y
+\end{tikzcd}
+\]
+conmuta. En particular, $p(h(0))=f(0)=x_0$ y $q(h(0))=g(0)=y_0$, con lo cual $h(0)=(x_0,y_0)$, y, $p(h(1))=f(1)=x_0$ y $q(h(1))=g(1)=y_0$, luego $h(1)=(x_0,y_0)$. De esta forma $[h]\in\pi_1(X\times Y,(x_0,y_0))$. Como además
+\begin{align*}
+\varphi([h])&=(p_*[h],q_*[h])\\
+&=([p\circ h],[q\circ h])\\
+&=([f],[g]),
+\end{align*}
+se sigue que $\varphi$ es sobreyectiva.\\\\
+Veamos que $\varphi$ es inyectiva. Sea $[h]\in\ker\varphi$ cualquiera. Entonces
+\begin{align*}
+([e_{x_0}],[e_{y_0}])&=\varphi([h])\\
+&=(p_*[h],q_*[h])\\
+&=([p\circ h],[q\circ h]),
+\end{align*}
+con $e_{x_0}:I\to X:t\mapsto x_0$ y $e_{y_0}:I\to Y:t\mapsto y_0$. Entonces $[p\circ h]=[e_{x_0}]$ y $[q\circ h]=[e_{y_0}]$, de donde $p\circ h\simeq_p e_{x_0}$ y $q\circ h\simeq_p e_{y_0}$. Así, existen $H_X:I\times I\to X$ y $H_Y:I\times I\to Y$ continuas tales que para cualesquiera $s,t\in I$ se tiene
+\begin{align*}
+&H_X(s,0)=(p\circ h)(s)=p(h(s)),\quad H_X(s,1)=e_{x_0}(1)=x_0\\
+&H_X(0,t)=x_0=H_X(1,t)\\
+&H_Y(s,0)=(q\circ h)(s)=q(h(s)),\quad H_Y(s,1)=e_{y_0}(1)=y_0\\
+&H_Y(0,t)=y_0=H_Y(1,t).
+\end{align*}
+Por la propiedad universal del producto, existe una única función continua $H:I\times I\to X\times Y$ tal que el diagrama
+\[
+\begin{tikzcd}[column sep=large,row sep=large]
+ & I\times I \arrow[dl,"H_X"'] \arrow[dr,"H_Y"] \arrow[d,dashed,"H"] & \\
+X & X\times Y \arrow[l,"p"] \arrow[r,"q"'] & Y
+\end{tikzcd}
+\]
+conmuta. Tomemos $e_{(x_0,y_0)}:I\to X\times Y:t\mapsto(x_0,y_0)$. Dados $s,t\in I$ cualesquiera se tiene
+\[
+p(H(s,t))=H_X(s,t)\quad\text{y}\quad q(H(s,t))=H_Y(s,t),
+\]
+por tanto $H(s,t)=(H_X(s,t),H_Y(s,t))$. De esta forma
+\begin{align*}
+H(s,0)&=(H_X(s,0),H_Y(s,0))=(p(h(s)),q(h(s)))=h(s)\\
+H(s,1)&=(H_X(s,1),H_Y(s,1))=(x_0,y_0)=e_{(x_0,y_0)}(s)\\
+H(0,t)&=(H_X(0,t),H_Y(0,t))=(x_0,y_0)\\
+H(1,t)&=(H_X(1,t),H_Y(1,t))=(x_0,y_0).
+\end{align*}
+Por tanto $h\simeq_p e_{(x_0,y_0)}$ y $[h]=[e_{(x_0,y_0)}]$. Con esto, $\ker\varphi$ es trivial y $\varphi$ es inyectiva.\\\\
+Por lo anterior, $\varphi$ es un isomorfismo, de modo que concluimos que $\pi_1(X\times Y,(x_0,y_0))$ y $\pi_1(X,x_0)\times\pi_1(Y,y_0)$ son isomorfos.
+\end{proof}\clearpage

@@ -1,0 +1,35 @@
+\begin{Lema}\label{Lema:Esfera_retracto_de_Rn_menos_origen}
+Para cualquier $n\in\mathbb{Z}^+$, $S^{n-1}$ es un retracto de deformación de $\mathbb{R}^n\setminus\{0\}$.
+\end{Lema}
+\begin{proof}
+Supongamos que $\frac{x}{\lVert x\rVert}t+(1-t)x=0$ para algún $(x,t)\in(\mathbb{R}^n\setminus\{0\})\times I$. Entonces
+\begin{align*}
+\left\lVert\frac{x}{\lVert x\rVert}t+(1-t)x\right\rVert&=0\\
+\left\lVert x\left(\frac{t}{\lVert x\rVert}+(1-t)\right)\right\rVert&=0\\
+\lVert x\rVert\left|\frac{t}{\lVert x\rVert}+(1-t)\right|&=0\\
+\left|t+\lVert x\rVert(1-t)\right|&=0\\
+t+\lVert x\rVert(1-t)&=0\\
+t+\lVert x\rVert-\lVert x\rVert t&=0\\
+t(1-\lVert x\rVert)&=-\lVert x\rVert\\
+t\left(\frac{\lVert x\rVert-1}{\lVert x\rVert}\right)&=0.
+\end{align*}
+Si $t=0$ entonces, como $\frac{x}{\lVert x\rVert}t+(1-t)x=0$, se tiene $x=0$ (contradicción). Si $\frac{\lVert x\rVert-1}{\lVert x\rVert}=0$ entonces $\lVert x\rVert=1$, y sustituyendo en $\frac{x}{\lVert x\rVert}t+(1-t)x=0$ se tiene $x=0$ (contradicción). Por tanto $\frac{x}{\lVert x\rVert}t+(1-t)x\neq0$ para todo $(x,t)\in(\mathbb{R}^n\setminus\{0\})\times I$. Definimos entonces
+\begin{align*}
+H:(\mathbb{R}^n\setminus\{0\})\times I&\to\mathbb{R}^n\setminus\{0\}\\
+(x,t)&\mapsto\frac{x}{\lVert x\rVert}t+(1-t)x.
+\end{align*}
+Como $H$ se forma a partir de funciones continuas mediante operaciones que preservan la continuidad, se tiene que $H$ es continua. Además
+\begin{itemize}
+\item Para cualquier $x\in\mathbb{R}^n\setminus\{0\}$, $H(x,0)=x$ y, como $\lVert H(x,1)\rVert=\left\lVert\frac{x}{\lVert x\rVert}\right\rVert=1$, entonces $H(x,1)\in S^{n-1}$.
+\item Para cualesquiera $z\in S^{n-1}$ y $t\in I$, se tiene $H(z,t)=\frac{z}{\lVert z\rVert}t+(1-t)z=zt+(1-t)z=z$.
+\end{itemize}
+Por tanto $S^{n-1}$ es un retracto de deformación de $\mathbb{R}^n\setminus\{0\}$.
+\end{proof}
+\textbf{b)} $\mathbb{R}^3-\{(0,0,0)\}$.
+\begin{proof}[\textbf{Solución}]
+Por el \Cref{Lema:Esfera_retracto_de_Rn_menos_origen}, $S^2$ es un retracto de deformación de $\mathbb{R}^3\setminus\{0\}$. Por tanto, para cualquier $z_0\in S^2$ se tiene
+\[
+\pi_1(\mathbb{R}^3\setminus\{0\},z_0)\cong\pi_1(S^2,z_0)=\{*\}.
+\]
+Como $\mathbb{R}^3\setminus\{0\}$ es conexo por caminos, para cualquier $z\in\mathbb{R}^3\setminus\{0\}$ se tiene $\pi_1(\mathbb{R}^3\setminus\{0\},z)\cong\pi_1(\mathbb{R}^3\setminus\{0\},z_0)$ y por tanto $\pi_1(\mathbb{R}^3\setminus\{0\},z)\cong\{*\}$.
+\end{proof}

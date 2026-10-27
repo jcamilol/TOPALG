@@ -1,0 +1,23 @@
+\textbf{8.} Pruebe que si $h:S^1\to S^1$ es homotópicamente nula, entonces $h$ tiene un punto fijo y $h$ aplica algún punto $x$ a su antípoda $-x$.
+\begin{proof}
+Supongamos que $h:S^1\to S^1$ es homotópicamente nula.\\\\
+Veamos que $h$ tiene un punto fijo. Como $h$ es homotópicamente nula, $h$ se extiende a una función continua $k:D^2\to S^1$. Por tanto $k':D^2\to D^2:x\mapsto k(x)$ es continua. Por el teorema del punto fijo de Brouwer para el disco, $k'$ tiene un punto fijo, es decir, existe $x\in D^2$ tal que $x=k'(x)=k(x)\in S^1$. Como $k|_{S^1}=h$ entonces $h(x)=k|_{S^1}(x)=k(x)=x$, de modo que $h$ tiene un punto fijo.\\\\
+Veamos que $h(x)=-x$ para algún $x\in S^1$. Razonando por contradicción supongamos que $h(x)\neq -x$ para todo $x\in S^1$, de modo que $h(x)+x\neq 0$ para todo $x\in S^1$. Definimos
+\[
+H:S^1\times I\to S^1,\qquad (x,t)\mapsto \frac{xt+(1-t)h(x)}{\lVert xt+(1-t)h(x)\rVert }.
+\]
+Para cualquier $(x,t)\in S^1\times I$, se tiene $\lVert xt+(1-t)h(x)\rVert \neq 0$, pues si para algún $(x,t)\in S^1\times I$ se tiene $\lVert xt+(1-t)h(x)\rVert =0$ entonces $xt+(1-t)h(x)=0$, y
+\begin{align*}
+xt&=(t-1)h(x)\\
+\lVert xt\rVert &=\lVert (t-1)h(x)\rVert \\
+|t|\,\lVert x\rVert &=|t-1|\,\lVert h(x)\rVert \\
+|t|&=|t-1|\\
+t&=1-t\\
+t&=\tfrac12,
+\end{align*}
+con lo cual $\tfrac12 x+\tfrac12 h(x)=0$ y $h(x)=-x$, contradiciendo nuestra hipótesis. Además, para cualquier $(x,t)\in S^1\times I$ se tiene
+\[
+\lVert H(x,t)\rVert =\left\lVert \frac{xt+(1-t)h(x)}{\lVert xt+(1-t)h(x)\rVert }\right\rVert =\frac{\lVert xt+(1-t)h(x)\rVert }{\lVert xt+(1-t)h(x)\rVert }=1,
+\]
+luego $H(x,t)\in S^1$. Así, $H$ está bien definida. Además, $H$ es continua, pues se obtiene a partir de funciones continuas mediante operaciones que preservan la continuidad. Ahora, para cualquier $x\in S^1$ tenemos $H(x,0)=h(x)$ y $H(x,1)=x=\mathrm{id}_{S^1}(x)$, con lo cual $H$ es una homotopía entre $h$ e $\mathrm{id}_{S^1}$. De esta forma, $\mathrm{id}_{S^1}\simeq h$. Como $h$ es homotópicamente nula y la relación $\simeq$ es de equivalencia, $\mathrm{id}_{S^1}:S^1\to S^1$ es homotópicamente nula, de modo que para cualquier $x_0\in S^1$, $(\mathrm{id}_{S^1})_*:\pi_1(S^1,x_0)\to\pi_1(S^1,x_0)$ es un homomorfismo trivial. Como $\pi_1(S^1,x_0)\cong(\mathbb{Z},+)$ entonces $\pi_1(S^1,x_0)$ es infinito y por tanto existen $\lambda,\mu\in\pi_1(S^1,x_0)$ distintos, pero $(\mathrm{id}_{S^1})_*(\lambda)=(\mathrm{id}_{S^1})_*(\mu)$, de modo que $(\mathrm{id}_{S^1})_*$ no es inyectiva y por tanto tampoco es un isomorfismo, pero esto es una contradicción, pues $\mathrm{id}_{S^1}$ es un homeomorfismo y por tanto $(\mathrm{id}_{S^1})_*$ es un isomorfismo. Se deduce por tanto que $h(x)=-x$ para algún $x\in S^1$.
+\end{proof}\clearpage

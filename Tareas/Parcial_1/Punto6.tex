@@ -1,0 +1,10 @@
+\textbf{6.} Sea $p : E \to B$ una función recubridora. Sean $\alpha$ y $\beta$ caminos en $B$ con $\alpha(1) = \beta(0)$. Sean $\widetilde{\alpha}$ y $\widetilde{\beta}$ sus levantamientos tales que $\widetilde{\alpha}(1) = \widetilde{\beta}(0)$. Demuestre que $\widetilde{\alpha} * \widetilde{\beta}$ es un levantamiento de $\alpha * \beta$.
+\begin{proof}
+   Como $\alpha$ y $\beta$ son caminos en $B$ y $\alpha (1)=\beta (0)$ entonces $\alpha * \beta$ es un camino en $B$, de modo que $\alpha*\beta$ es una función continua de $I$ en $B$. Como $\widetilde{\alpha}$ y $\widetilde{\beta}$ son caminos en $E$ con $\widetilde{\alpha}(1)=\widetilde{\beta}(0)$, se tiene que $\widetilde{\alpha}*\widetilde{\beta}$ es un camino en $E$. En particular $\widetilde{\alpha}*\widetilde{\beta}$ es una función continua de $I$ en $E$. Por definición de levantamiento tenemos que $p \circ \widetilde{\alpha} = \alpha$ y $p \circ \widetilde{\beta} = \beta$.
+   Como $p: E \to B$ es continua, y $\widetilde{\alpha}$ y $\widetilde{\beta}$ son caminos en $E$ con $\widetilde{\alpha}(1) = \widetilde{\beta}(0)$, por el punto 1 de la tarea tenemos
+   $$
+      p \circ (\widetilde{\alpha} * \widetilde{\beta}) = (p \circ \widetilde{\alpha}) * (p \circ \widetilde{\beta}) = \alpha * \beta,
+   $$
+   luego $\widetilde{\alpha} * \widetilde{\beta}$ es un levantamiento de $\alpha * \beta$.
+\end{proof}\clearpage
+%Revisado

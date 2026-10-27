@@ -1,0 +1,18 @@
+\textbf{11.} Calcule los grupos fundamentales de:\\\\
+\textbf{a)} 3-toro
+\begin{proof}[\textbf{Solución}]
+Sea $(x_0,y_0,z_0)\in S^1\times S^1\times S^1$ cualquiera. Sabemos que $S^1\times S^1\times S^1\cong(S^1\times S^1)\times S^1$ vía
+\begin{align*}
+h:S^1\times S^1\times S^1&\longrightarrow(S^1\times S^1)\times S^1\\
+(x,y,z)&\longmapsto((x,y),z).
+\end{align*}
+Entonces
+\begin{align*}
+\pi_1(S^1\times S^1\times S^1,(x_0,y_0,z_0))&\cong\pi_1((S^1\times S^1)\times S^1,((x_0,y_0),z_0))\\
+&\cong\pi_1(S^1\times S^1,(x_0,y_0))\times\pi_1(S^1,z_0)\\
+&\cong(\pi_1(S^1,x_0)\times\pi_1(S^1,y_0))\times\pi_1(S^1,z_0)\\
+&\cong\pi_1(S^1,x_0)\times\pi_1(S^1,y_0)\times\pi_1(S^1,z_0)\\
+&\cong(\mathbb{Z},+)\times(\mathbb{Z},+)\times(\mathbb{Z},+).
+\end{align*}
+\end{proof}
+
