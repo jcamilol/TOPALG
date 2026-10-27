@@ -1,0 +1,29 @@
+\textbf{1.} Demuestre que si $h,h':X\to Y$ son homotópicas y $k,k':Y\to Z$ son homotópicas entonces $k\circ h$ y $k'\circ h'$ son homotópicas.
+\begin{proof}
+Supongamos que $h$ y $h'$ son homotópicas y que $k$ y $k'$ son homotópicas. Existen $F_h:X\times I\to Y$ y $F_k:Y\times I\to Z$ homotopías entre $h$ y $h'$, y entre $k$ y $k'$, respectivamente. Como la proyección en la segunda coordenada $\rho_2':X\times I\to I$ es continua, por la propiedad universal del producto existe una única función continua $g:X\times I\to Y\times I$ tal que el siguiente diagrama conmuta:
+\[
+\begin{tikzcd}[column sep=large,row sep=large]
+ & X\times I \arrow[dl,"F_h"'] \arrow[dr,"\rho_2'"] \arrow[d,dashed,"g"] & \\
+Y & Y\times I \arrow[l,"\rho_1"] \arrow[r,"\rho_2"'] & I
+\end{tikzcd}
+\]
+donde $\rho_1$ y $\rho_2$ son las proyecciones en la primera y segunda coordenada, respectivamente. Notemos que $F_k\circ g:X\times I\to Z$ es continua por ser composición de funciones continuas, y para todo $x\in X$
+\begin{align*}
+(F_k\circ g)(x,0)&=F_k(g(x,0))\\
+&=F_k(\rho_1(g(x,0)),\rho_2(g(x,0)))\\
+&=F_k(F_h(x,0),\rho_2'(x,0))\\
+&=F_k(h(x),0)\\
+&=k(h(x))\\
+&=(k\circ h)(x)
+\end{align*}
+y
+\begin{align*}
+(F_k\circ g)(x,1)&=F_k(g(x,1))\\
+&=F_k(\rho_1(g(x,1)),\rho_2(g(x,1)))\\
+&=F_k(F_h(x,1),\rho_2'(x,1))\\
+&=F_k(h'(x),1)\\
+&=k'(h'(x))\\
+&=(k'\circ h')(x).
+\end{align*}
+Por lo tanto $F_k\circ g$ es una homotopía entre $k\circ h$ y $k'\circ h'$. Concluimos que $k\circ h$ y $k'\circ h'$ son homotópicas.
+\end{proof}\clearpage

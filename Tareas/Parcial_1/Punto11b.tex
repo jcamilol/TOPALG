@@ -5,15 +5,15 @@ Para cualquier $n\in\mathbb{Z}^+$, $S^{n-1}$ es un retracto de deformación de $
 Supongamos que $\frac{x}{\lVert x\rVert}t+(1-t)x=0$ para algún $(x,t)\in(\mathbb{R}^n\setminus\{0\})\times I$. Entonces
 \begin{align*}
 \left\lVert\frac{x}{\lVert x\rVert}t+(1-t)x\right\rVert&=0\\
-\left\lVert x\left(\frac{t}{\lVert x\rVert}+(1-t)\right)\right\rVert&=0\\
-\lVert x\rVert\left|\frac{t}{\lVert x\rVert}+(1-t)\right|&=0\\
-\left|t+\lVert x\rVert(1-t)\right|&=0\\
-t+\lVert x\rVert(1-t)&=0\\
-t+\lVert x\rVert-\lVert x\rVert t&=0\\
-t(1-\lVert x\rVert)&=-\lVert x\rVert\\
-t\left(\frac{\lVert x\rVert-1}{\lVert x\rVert}\right)&=0.
+\left\lVert\frac{xt+(1-t)\lVert x\rVert x}{\lVert x\rVert}\right\rVert&=0\\
+\lVert xt+(1-t)\lVert x\rVert x\rVert&=0\\
+\lVert x(t+(1-t)\lVert x\rVert)\rVert&=0\\
+\lVert x\rVert\,|t+(1-t)\lVert x\rVert|&=0\\
+|t+(1-t)\lVert x\rVert|&=0\\
+t+(1-t)\lVert x\rVert&=0\\
+(1-t)\lVert x\rVert&=-t
 \end{align*}
-Si $t=0$ entonces, como $\frac{x}{\lVert x\rVert}t+(1-t)x=0$, se tiene $x=0$ (contradicción). Si $\frac{\lVert x\rVert-1}{\lVert x\rVert}=0$ entonces $\lVert x\rVert=1$, y sustituyendo en $\frac{x}{\lVert x\rVert}t+(1-t)x=0$ se tiene $x=0$ (contradicción). Por tanto $\frac{x}{\lVert x\rVert}t+(1-t)x\neq0$ para todo $(x,t)\in(\mathbb{R}^n\setminus\{0\})\times I$. Definimos entonces
+Si $t=1$ se llega a $0=-1$. Si $t=0$ se llega a $\lVert x\rVert=0$. Si $0<t<1$ entonces $-t<0$ y $1-t>0$, pero $\lVert x\rVert>0$, así que $-t=(1-t)\lVert x\rVert>0$. En todo caso se llega a una contradicción, así que $\frac{x}{\lVert x\rVert}t+(1-t)x\neq0$ para todo $(x,t)\in(\mathbb{R}^n\setminus\{0\})\times I$. Definimos entonces
 \begin{align*}
 H:(\mathbb{R}^n\setminus\{0\})\times I&\to\mathbb{R}^n\setminus\{0\}\\
 (x,t)&\mapsto\frac{x}{\lVert x\rVert}t+(1-t)x.

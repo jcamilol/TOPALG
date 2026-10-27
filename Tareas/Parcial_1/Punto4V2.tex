@@ -1,13 +1,13 @@
-\textbf{4.} Sea $X$ un espacio topológico conexo y $Y$ un conjunto cualquiera. Si $f: X \to Y$ es una función localmente constante, entonces $f$ es constante en todo $X$.
+\textbf{4.} Sea $p:E\to B$ una función recubridora, con $B$ conexo. Demuestre que si $p^{-1}(b_0)$ tiene $k$ elementos para algún $b_0\in B$, entonces $p^{-1}(b)$ tiene $k$ elementos para todo $b\in B$.
 \begin{proof}
-Fijemos un punto $x_0 \in X$ y sea $c = f(x_0) \in Y$. Definimos los subconjuntos  
-   $$
-      A = \{x \in X \mid f(x) = c \} \quad \text{y} \quad B = \{x \in X \mid f(x) \neq c \}.
-   $$ 
-Veamos que $A$ y $B$ son subconjuntos abiertos en $X$: 
-\begin{enumerate} 
-   \item \textbf{$A$ es abierto en $X$:} Sea $x \in A$. Como $f$ es localmente constante, existe una vecindad abierta $U_x$ de $x$ tal que $f$ toma un único valor en $U_x$. Dado que $x \in A$, se tiene $f(x) = c$, de modo que $f(y) = c$ para todo $y \in U_x$. Por tanto $U_x \subseteq A$, lo que demuestra que $A$ es abierto. 
-   \item \textbf{$B$ es abierto en $X$:} Sea $x \in B$. Entonces $f(x) = d$ con $d \neq c$. Por ser $f$ localmente constante, existe una vecindad abierta $V_x$ de $x$ tal que $f(y) = d \neq c$ para todo $y \in V_x$. Por tanto $V_x \subseteq B$, lo que demuestra que $B$ es abierto. 
-\end{enumerate} 
-Por definición de $A$ y $B$, es claro que $A \cap B = \emptyset$ y $A \cup B = X$. Además, como $x_0 \in A$, se tiene $A \neq \emptyset$. Si supusiéramos que $B \neq \emptyset$, el par $(A, B)$ constituiría una separación de $X$ por abiertos disjuntos no vacíos, lo cual contradice la hipótesis de que $X$ es conexo. Por lo tanto, $B = \emptyset$, de donde $A = X$. Concluimos que $f(x) = c$ para todo $x \in X$, es decir, $f$ es globalmente constante.
+Cada $b\in B$ tiene una vecindad $U_b$ abierta regularmente cubierta por $p$. Llamemos $\{V_{b,\alpha}\}_{\alpha\in I_b}$ a la partición de $p^{-1}(U_b)$ en rebanadas.\\\\
+Sea $b\in B$ cualquiera y tomemos $c\in U_b$ cualquiera. Veamos que $|p^{-1}(c)|=|I_b|$. Para cada $\alpha\in I_b$, como $p|_{V_{b,\alpha}}:V_{b,\alpha}\to U_b$ es biyectiva, existe un único $c_{b,\alpha}\in V_{b,\alpha}$ tal que $p(c_{b,\alpha})=p|_{V_{b,\alpha}}(c_{b,\alpha})=c$, luego $c_{b,\alpha}\in p^{-1}(c)$. Definimos
+\begin{align*}
+\varphi:I_b&\longrightarrow p^{-1}(c)\\
+\alpha&\longmapsto c_{b,\alpha}.
+\end{align*}
+Dados $\alpha,\alpha'\in I_b$ con $\alpha\neq\alpha'$, se tiene $c_{b,\alpha}\in V_{b,\alpha}$, $c_{b,\alpha'}\in V_{b,\alpha'}$ y $V_{b,\alpha}\cap V_{b,\alpha'}=\emptyset$, luego $c_{b,\alpha}\neq c_{b,\alpha'}$ y $\varphi$ es inyectiva. Si $w\in p^{-1}(c)$, como $\{c\}\subseteq U_b$ entonces $p^{-1}(c)\subseteq p^{-1}(U_b)=\bigsqcup_{\alpha\in I_b}V_{b,\alpha}$, luego existe $\beta\in I_b$ tal que $w\in V_{b,\beta}$. De esta manera $p|_{V_{b,\beta}}(w)=p(w)=c=p|_{V_{b,\beta}}(c_{b,\beta})$; como $p|_{V_{b,\beta}}$ es inyectiva, entonces $w=c_{b,\beta}=\varphi(\beta)$, luego $\varphi$ es sobreyectiva. Así, $\varphi$ es biyectiva y $|p^{-1}(c)|=|I_b|$, para todo $c\in U_b$. En particular, $|p^{-1}(b)|=|I_b|$. Por tanto $|p^{-1}(c)|=|p^{-1}(b)|$ para todo $c\in U_b$.\\\\
+Sea $b_0\in B$ y tomemos $M=\{b\in B\mid|p^{-1}(b)|=|p^{-1}(b_0)|\}$ y $N=\{b\in B\mid|p^{-1}(b)|\neq|p^{-1}(b_0)|\}$.\\\\
+Veamos que $M=\bigcup_{b\in M}U_b$ y $N=\bigcup_{b\in N}U_b$.\\\\
+Dado $c\in M$ se tiene $c\in U_c$, luego $c\in\bigcup_{b\in M}U_b$, luego $M\subseteq\bigcup_{b\in M}U_b$. Análogamente $N\subseteq\bigcup_{b\in N}U_b$. Sea $c\in\bigcup_{b\in M}U_b$. Entonces $c\in U_b$ para algún $b\in M$. Entonces $|p^{-1}(c)|=|p^{-1}(b)|=|p^{-1}(b_0)|$ y $c\in M$. Así, $\bigcup_{b\in M}U_b\subseteq M$ y $M=\bigcup_{b\in M}U_b$. Igualmente, si $c\in\bigcup_{b\in N}U_b$ entonces $c\in U_b$ para algún $b\in N$, luego $|p^{-1}(c)|=|p^{-1}(b)|\neq|p^{-1}(b_0)|$ y $c\in N$. Luego $\bigcup_{b\in N}U_b\subseteq N$ y $N=\bigcup_{b\in N}U_b$. De esta forma, $M$ y $N$ son abiertos de $B$ por ser unión de abiertos de $B$. Claramente $B=M\cup N$ y $M\cap N=\emptyset$. Además $M\neq\emptyset$ pues $b_0\in M$. Así, si $N\neq\emptyset$ se tiene que $(M,N)$ es una separación de $B$, contradiciendo que $B$ es conexo. Por tanto $N=\emptyset$ y $B=M$, con lo cual, para todo $b\in B$, se tiene $b\in M$ y por tanto $|p^{-1}(b)|=|p^{-1}(b_0)|$. En particular, si $p^{-1}(b_0)$ tiene $k$ elementos entonces $p^{-1}(b)$ tiene $k$ elementos.
 \end{proof}\clearpage

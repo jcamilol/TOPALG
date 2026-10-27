@@ -1,5 +1,5 @@
 \begin{Lema}\label{Lema:Disco_menos_puntos_retracto_de_plano_menos_puntos}
-Para cualquier $n\in\mathbb{Z}^+$ con $n\geq2$, tomamos $p_1,\dots,p_n\in B_1(0)$ distintos. Entonces $D^2\setminus\{p_1,\dots,p_n\}$ es un retracto de deformación de $\mathbb{R}^2\setminus\{p_1,\dots,p_n\}$.
+Para cualquier $n\in\mathbb{Z}^+$ tomamos $p_1,\dots,p_n\in B_1(0)$ distintos. Entonces $D^2\setminus\{p_1,\dots,p_n\}$ es un retracto de deformación de $\mathbb{R}^2\setminus\{p_1,\dots,p_n\}$.
 \end{Lema}
 \begin{proof}
 Tomemos $X_1=\mathbb{R}^2\setminus B_1(0)=\{(x,y)\in\mathbb{R}^2\mid\lVert(x,y)\rVert\geq1\}$ y $X_2=D^2\setminus\{p_1,\dots,p_n\}$. Como $X_1\overset{\text{cer}}{\subseteq}\mathbb{R}^2$ y $X_1\subseteq\mathbb{R}^2\setminus\{p_1,\dots,p_n\}$, entonces $X_1\overset{\text{cer}}{\subseteq}\mathbb{R}^2\setminus\{p_1,\dots,p_n\}$. Como $X_2=D^2\cap\left( \mathbb{R}^2\setminus\{p_1,\dots,p_n\} \right)$ y $D^2\overset{\text{cer}}{\subseteq}\mathbb{R}^2$ entonces $X_2\overset{\text{cer}}{\subseteq}\mathbb{R}^2\setminus\{p_1,\dots,p_n\}$. Así, $X_1\times I\overset{\text{cer}}{\subseteq}(\mathbb{R}^2\setminus\{p_1,\dots,p_n\})\times I$ y $X_2\times I\overset{\text{cer}}{\subseteq}(\mathbb{R}^2\setminus\{p_1,\dots,p_n\})\times I$, y, como $X_1\cup X_2=\mathbb{R}^2\setminus\{p_1,\dots,p_n\}$ y $X_1\cap X_2=S^1$ entonces $(X_1\times I)\cup(X_2\times I)=(\mathbb{R}^2\setminus\{p_1,\dots,p_n\})\times I$, y $(X_1\times I)\cap(X_2\times I)=S^1\times I$. Definimos
@@ -43,7 +43,7 @@ Por tanto $X_2=D^2\setminus\{p_1,\dots,p_n\}$ es un retracto de deformación de 
 \end{proof}
 
 \begin{Lema}\label{Lema:Rectangulo_menos_puntos_retracto}
-Sea $n\in\mathbb{Z}^+$ y sean $p_1,\dots,p_n$ puntos distintos de $(-1,0)\times(-1,1)$. Sea $\varepsilon>0$ cualquiera y tomemos $X=([-1,\varepsilon)\times[-1,1])\setminus\{p_1,\dots,p_n\}$. Entonces $Y=([-1,0]\times[-1,1])\setminus\{p_1,\dots,p_n\}$ es un retracto de deformación de $X$.
+Sea $n\in\mathbb{Z}^+$ y sean $p_1,\dots,p_n$ puntos distintos de $(-1,0)\times(-1,1)$. Sea $\varepsilon>0$ cualquiera y tomemos $X=([-1,\varepsilon)\times[-1,1])\setminus\{p_1,\dots,p_n\}$. Entonces $X_1=([-1,0]\times[-1,1])\setminus\{p_1,\dots,p_n\}$ es un retracto de deformación de $X$.
 \end{Lema}
 \begin{center}
 \begin{tikzpicture}[x=2.6cm,y=1.3cm,hole/.style={circle,draw,fill=white,inner sep=1.3pt}]
@@ -66,12 +66,12 @@ Sea $n\in\mathbb{Z}^+$ y sean $p_1,\dots,p_n$ puntos distintos de $(-1,0)\times(
 \end{tikzpicture}
 \end{center}
 \begin{proof}
-Tomemos $X_1=([-1,0]\times[-1,1])\setminus\{p_1,\dots,p_n\}$ y $X_2=[0,\varepsilon)\times[-1,1]$. Notemos que $X_1\cup X_2=X$, $X_1=([-1,0]\times[-1,1])\cap X$ y $X_2=([0,\varepsilon]\times[-1,1])\cap X$. Como $[-1,0]\times[-1,1]$ y $[0,\varepsilon]\times[-1,1]$ son cerrados de $\mathbb{R}^2$ entonces $X_1$ y $X_2$ son cerrados de $X$. Tenemos $X_1\cap X_2=\{0\}\times[-1,1]$. De esta forma, $X_1\times I\overset{\text{cer}}{\subseteq}X\times I$, $X_2\times I\overset{\text{cer}}{\subseteq}X\times I$, $(X_1\times I)\cup(X_2\times I)=X\times I$, y $(X_1\times I)\cap(X_2\times I)=(\{0\}\times[-1,1])\times I$. Definimos las funciones
+Tomemos $X_2=[0,\varepsilon)\times[-1,1]$. Notemos que $X_1\cup X_2=X$, $X_1=([-1,0]\times[-1,1])\cap X$ y $X_2=([0,\varepsilon]\times[-1,1])\cap X$. Como $[-1,0]\times[-1,1]$ y $[0,\varepsilon]\times[-1,1]$ son cerrados de $\mathbb{R}^2$ entonces $X_1$ y $X_2$ son cerrados de $X$. Tenemos $X_1\cap X_2=\{0\}\times[-1,1]$. De esta forma, $X_1\times I\overset{\text{cer}}{\subseteq}X\times I$, $X_2\times I\overset{\text{cer}}{\subseteq}X\times I$, $(X_1\times I)\cup(X_2\times I)=X\times I$, y $(X_1\times I)\cap(X_2\times I)=(\{0\}\times[-1,1])\times I$. Definimos las funciones
 \begin{align*}
 H_1:X_1\times I&\to X\\
-((x,y),t)&\mapsto((1-t)x,y)\\
+((x,y),t)&\mapsto(x,y)\\
 H_2:X_2\times I&\to X\\
-((x,y),t)&\mapsto(x,y)
+((x,y),t)&\mapsto((1-t)x,y)
 \end{align*}
 que son continuas. Para cualesquiera $y\in[-1,1]$ y $t\in I$ se tiene $H_1((0,y),t)=(0,y)=H_2((0,y),t)$. Así, por el lema de pegado la función
 \begin{align*}
@@ -88,12 +88,12 @@ es continua. Además
 \begin{align*}
 H((x,y),0)&=H_1((x,y),0)=(x,y) &&\text{si } (x,y)\in X_1,\\
 H((x,y),0)&=H_2((x,y),0)=(x,y) &&\text{si } (x,y)\in X_2,\\
-H((x,y),1)&=H_1((x,y),1)=(0,y)\in X_2 &&\text{si } (x,y)\in X_1,\\
-H((x,y),1)&=H_2((x,y),1)=(x,y)\in X_2 &&\text{si } (x,y)\in X_2.
+H((x,y),1)&=H_1((x,y),1)=(x,y)\in X_1 &&\text{si } (x,y)\in X_1,\\
+H((x,y),1)&=H_2((x,y),1)=(0,y)\in X_1 &&\text{si } (x,y)\in X_2.
 \end{align*}
-\item Para cualesquiera $(x,y)\in X_2$ y $t\in I$ se tiene $H((x,y),t)=H_2((x,y),t)=(x,y)$.
+\item Para cualesquiera $(x,y)\in X_1$ y $t\in I$ se tiene $H((x,y),t)=H_1((x,y),t)=(x,y)$.
 \end{itemize}
-Por tanto $Y$ es un retracto de deformación de $X$.
+Por tanto $X_1$ es un retracto de deformación de $X$.
 \end{proof}
 
 \begin{Lema}\label{Lema:Pi1_circulo_disco_menos_origen}

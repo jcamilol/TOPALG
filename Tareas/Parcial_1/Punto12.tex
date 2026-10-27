@@ -3,7 +3,7 @@
 La función $a:S^2\to S^2:x\mapsto-x$ es continua; como es su propia inversa, es un homeomorfismo. Tomemos $p:S^2\to P^2:x\mapsto[x]=\{x,-x\}$, que es sobreyectiva y continua por la definición de espacio cociente.\\\\
 \textbf{Hecho:} Sea $[x]\in P^2$ cualquiera. Se tiene $p^{-1}([x])=\{x,-x\}$.
 
-Como $p(x)=[x]=[-x]=p(-x)$, entonces $x,-x\in p^{-1}([x])$. Si $y\in p^{-1}([x])$ entonces $\{y,-y\}=p(y)=[x]=\{x,-x\}$, luego $y=x$ o $y=-x$. Esto prueba el hecho.\\\\
+Como $p(x)=[x]=[-x]=p(-x)$, entonces $x,-x\in p^{-1}([x])$. Si $y\in p^{-1}([x])$ entonces $\{y,-y\}=p(y)=[x]=\{x,-x\}$, luego $y=x$ o $y=-x$. Esto prueba el hecho. Notemos además que, como $x\ne 0$ entonces $x\ne -x$ y por tanto $|p^{-1}\left( [x]\right)|=2$.\\\\
 Veamos que $p$ es abierta. Sea $A\subseteqab S^2$. Tenemos
 \[
 p(A)=\{p(x)\mid x\in A\}=\{[x]\mid x\in A\}=\bigcup_{x\in A}\{[x]\}.
@@ -30,7 +30,7 @@ Para cada $[x]\in P^2$ tomamos $U_{[x]}=p(V_x)$. Como $p(V_x)=p(V_{-x})$ entonce
 Veamos que $p|_{V_x}:V_x\to p(V_x)$ es un homeomorfismo. Como $p$ es continua, $p|_{V_x}$ es continua. Además $p|_{V_x}$ es sobreyectiva pues $p|_{V_x}(V_x)=p(V_x)$. Si $y,z\in V_x$ y $p|_{V_x}(y)=p|_{V_x}(z)$, es decir, $\{y,-y\}=p(y)=p(z)=\{z,-z\}$, entonces $y=z$ o $y=-z$, pero con esto último $-z\in V_x$ y $z\in V_x\cap V_{-x}=\emptyset$, así que se tiene $y=z$ y por tanto $p|_{V_x}$ es inyectiva. Además $p|_{V_x}$ es abierta, pues dado $A\subseteqab V_x$, como $V_x\subseteqab S^2$ entonces $A\subseteqab S^2$, y como $p$ es abierta, $p|_{V_x}(A)=p(A)\subseteqab P^2$, y como $p|_{V_x}(A)\subseteq p(V_x)$ entonces $p|_{V_x}(A)=p|_{V_x}(A)\cap p(V_x)\subseteqab p(V_x)$. De esta forma $p|_{V_x}:V_x\to p(V_x)=U_{[x]}$ es un homeomorfismo. Como esto vale para $x\in S^2$ arbitrario, en particular $p|_{V_{-x}}:V_{-x}\to U_{[-x]}=U_{[x]}$ es un homeomorfismo.\\\\
 Con lo anterior, cualquier $[x]\in P^2$ tiene una vecindad $U_{[x]}$ regularmente cubierta por $p$, donde $\{V_x,V_{-x}\}$ es la partición de $p^{-1}(U_{[x]})$ en rebanadas. Concluimos que $p:S^2\to P^2$ es una función de recubrimiento. Como $S^2$ es simplemente conexo, para cualquier $y\in P^2$ la correspondencia de levantamiento
 \[
-\Phi:\pi_1(P^2,y)\to p^{-1}(y)
+\phi:\pi_1(P^2,y)\to p^{-1}(y)
 \]
 es una biyección, luego $|\pi_1(P^2,y)|=|p^{-1}(y)|=2$, es decir que $\pi_1(P^2,y)$ es un grupo de orden $2$.
 \end{proof}

@@ -1,5 +1,9 @@
 \textbf{2.} Dados dos espacios topológicos $X$ y $Y$, denote por $[X,Y]$ el conjunto de todas las clases de homotopía de funciones de $X$ a $Y$. Sea $I=[0,1]$, demuestre que para cualquier $X$, el conjunto $[X,I]$ tiene un único elemento. 
 \begin{proof}
-   Sea $X$ un espacio topológico cualquiera. Como $c_0:\, X\to I: \, x\mapsto 0$ es continua, entonces $[X,I]$ tiene al menos un elemento, a saber, la clase de homotopía de $c_0$. Ahora, sean $f,f': \, X\to I$ funciones continuas cualesquiera. Como $I$ es convexo, la función $F:\, X\times I\to I:\, (1-t)f(x)+tf'(x)$ es una homotopía entre $f$ y $f'$ (homotopía de la línea recta). Por tanto $f$ y $f'$ tiene la misma clase de homotopía, y se sigue que $[X,I]$ tiene exactamente un elemento. 
+   Sea $X$ un espacio topológico cualquiera. Como $c_0:\, X\to I: \, x\mapsto 0$ es continua, entonces $[X,I]$ tiene al menos un elemento, a saber, la clase de homotopía de $c_0$. Ahora, sean $f,f': \, X\to I$ funciones continuas cualesquiera. Como $I$ es convexo, la función 
+   $$
+   F:\, X\times I\to I:\, (x,t)\mapsto (1-t)f(x)+tf'(x)
+   $$ 
+   es una homotopía entre $f$ y $f'$ (homotopía de la línea recta). Por tanto $f$ y $f'$ tiene la misma clase de homotopía, y se sigue que $[X,I]$ tiene exactamente un elemento. 
 \end{proof}
 \clearpage
